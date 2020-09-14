@@ -17,6 +17,9 @@ inputs:
   ctest_analyzer:
     description: 'ctest analyzer like clang-tidy or scan-build'
     required: false 
+  ctest_run_tests:
+    description: 'Enable/disable running ctest test step'
+    required: false 
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -26,4 +29,5 @@ runs:
     - ${{ inputs.ctest_configuration_type}}
     - ${{ inputs.ctest_binary_directory}}
     - ${{ inputs.ctest_analyzer}}
+    - ${{ inputs.ctest_run_tests}}
 
