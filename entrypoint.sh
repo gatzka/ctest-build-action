@@ -35,5 +35,5 @@ if [ "x$INPUT_CMAKE_OPTIONS" != 'x' ]; then
 	CTEST_OPTIONS+=" -D"${INPUT_CMAKE_OPTIONS}
 fi
 
-ctest -S build.cmake ${CTEST_OPTIONS}
+ctest -VV -S build.cmake ${CTEST_OPTIONS}
 
