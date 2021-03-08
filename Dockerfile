@@ -1,5 +1,4 @@
-FROM ghcr.io/gatzka/gh-c-ci:1.5.0
-#FROM gatzka/gh-c-ci:1.4.0
+FROM ghcr.io/gatzka/gh-c-ci:1.6.0
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
