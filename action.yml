@@ -20,6 +20,9 @@ inputs:
   ctest_run_tests:
     description: 'Enable/disable running ctest test step'
     required: false 
+  ssh_key:
+    description: 'ssh key used for FetchContent'
+    required: false 
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,4 +33,5 @@ runs:
     - ${{ inputs.ctest_binary_directory}}
     - ${{ inputs.ctest_analyzer}}
     - ${{ inputs.ctest_run_tests}}
+    - ${{ inputs.ssh_key}}
 

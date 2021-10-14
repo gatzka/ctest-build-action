@@ -35,5 +35,10 @@ if [ "x$INPUT_CMAKE_OPTIONS" != 'x' ]; then
 	CTEST_OPTIONS+=" -D"${INPUT_CMAKE_OPTIONS}
 fi
 
+if [ "x$INPUT_SSH_KEY" != 'x' ]; then
+    eval $(ssh-agent)
+    ssh-add - <<< "$INPUT_SSH_KEY"
+fi
+
 ctest -VV -S build.cmake ${CTEST_OPTIONS}
 
